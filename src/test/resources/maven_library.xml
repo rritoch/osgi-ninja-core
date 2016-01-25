@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<deps xmlns="urn:com:vnetpublishing:osgi:dependencies">
+   <mavenLibrary>
+        <groupId>com.vnetpublishing.java</groupId>
+        <artifactId>osgi-ninja-library-example</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <resources>/com/vnetpublishing/java/osgi/tools/example/example.xml</resources>
+    </mavenLibrary>
+</deps>
+

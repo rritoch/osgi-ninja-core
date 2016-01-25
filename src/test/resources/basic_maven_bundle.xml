@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<deps xmlns="urn:com:vnetpublishing:osgi:dependencies">
+    <mavenBundle>
+        <groupId>org.apache.servicemix.bundles</groupId>
+        <artifactId>org.apache.servicemix.bundles.spring-core</artifactId>
+        <version>4.2.4.RELEASE_1</version>
+    </mavenBundle>
+</deps>

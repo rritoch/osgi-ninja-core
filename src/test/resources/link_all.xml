@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<deps xmlns="urn:com:vnetpublishing:osgi:dependencies">
+    <link href="basic_maven_bundle.xml"/>
+    <link href="basic_maven_wrap_bundle.xml"/>
+    <link href="resource_bundle.xml"/>
+    <link href="resource_bundle_wrap.xml"/>
+    <link href="maven_library.xml"/>
+</deps>

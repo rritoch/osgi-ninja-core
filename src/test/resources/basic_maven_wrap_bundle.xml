@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<deps xmlns="urn:com:vnetpublishing:osgi:dependencies">
+    <mavenBundle>
+        <groupId>com.vnetpublishing.java</groupId>
+        <artifactId>super-user-application</artifactId>
+        <version>0.0.5</version>
+        <wrap>
+            <instr>
+                <name>Bundle-SymbolicName</name>
+                <value>super-user-application</value>
+            </instr>
+            <instr>
+                <name>Import-Package</name>
+                <valueList>
+                	<value>clojure</value>
+                	<value>*;resolution:=optional</value>
+                </valueList>
+            </instr>
+        </wrap>
+    </mavenBundle>
+</deps>

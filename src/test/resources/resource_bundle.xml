@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<deps xmlns="urn:com:vnetpublishing:osgi:dependencies">
+    <resourceBundle>
+        <artifactId>helloworld</artifactId>
+        <version>1.0</version>
+        <resource>file:src/test/ext/helloworld.jar</resource>        
+    </resourceBundle>
+</deps>

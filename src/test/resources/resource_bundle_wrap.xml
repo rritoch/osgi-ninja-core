@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<deps xmlns="urn:com:vnetpublishing:osgi:dependencies">
+    <resourceBundle>
+        <artifactId>helloworld</artifactId>
+        <version>1.0</version>
+        <resource>file:src/test/ext/helloworld.jar</resource>
+        <wrap>
+            <instr>
+                <name>Bundle-SymbolicName</name>
+                <value>helloworld</value>
+            </instr>
+            <instr>
+                <name>Import-Package</name>
+                <valueList>
+                	<value>clojure</value>
+                	<value>*;resolution:=optional</value>
+                </valueList>
+            </instr>
+        </wrap>
+    </resourceBundle>
+</deps>
