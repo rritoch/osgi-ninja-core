@@ -1,5 +1,6 @@
 package com.vnetpublishing.java.osgi.tools;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -38,6 +39,12 @@ public class OsgiUserBundleRespository {
 		cache = OsgiLocalBundleRepositoryCache.DEFAULT;
 	}
 
+	public OsgiUserBundleRespository(File path) 
+	{
+		this.path = path.toPath();
+		cache = OsgiLocalBundleRepositoryCache.DEFAULT;
+	}
+	
 	public OsgiUserBundleRespository(String path,OsgiLocalBundleRepositoryCache cache) 
 	{
 		this.path = Paths.get(path);

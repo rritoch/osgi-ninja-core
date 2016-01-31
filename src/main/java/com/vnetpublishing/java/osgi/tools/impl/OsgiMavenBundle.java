@@ -3,6 +3,7 @@ package com.vnetpublishing.java.osgi.tools.impl;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
+//import java.util.logging.Logger;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -23,6 +24,8 @@ import com.vnetpublishing.java.osgi.tools.protocol.OsgiArtifactConfig;
 )
 public class OsgiMavenBundle extends AOsgiDependency implements OsgiArtifact  {
 
+	//public static final Logger LOGGER = Logger.getLogger(OsgiMavenBundle.class.getName());
+	
 	public static final String DEPENDENCY_TYPE = "MAVEN_BUNDLE";
 	
 	@XmlElement
@@ -90,8 +93,22 @@ public class OsgiMavenBundle extends AOsgiDependency implements OsgiArtifact  {
 		
 		try {
 			System.setProperty("java.protocol.handler.pkgs", "org.ops4j.pax.url");
-			URL url = new URL(sb.toString());		
-			return url;
+			
+			String uri = sb.toString();
+			try {
+				URL url = new URL(uri);
+				return url;
+			} catch (final MalformedURLException e) {
+				String err = String.format("Problem with URL \"%s\"",uri);
+				throw new MalformedURLException(err) {
+					private static final long serialVersionUID = 292834072479134516L;
+					@Override
+					public Throwable getCause() {
+						return e;
+					}
+				};
+			}
+			
 		
 		} finally {
 			if (oldProp == null) {
