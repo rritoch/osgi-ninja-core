@@ -5,7 +5,11 @@ This library contains features to simplify the management of OSGI dependencies.
 Using XML configuration files it will download dependencies, wrap them, and 
 install them into a project folder for use in deployment.
 
-## Example
+## Usage
+
+This library depends on the [osgi-ninja-library-example](https://github.com/rritoch/osgi-ninja-library-example) to pass the tests. This library is utilized as an example of including dependencies from a library that has been published on maven.
+
+### Example
 
 Java Code:
 ```
