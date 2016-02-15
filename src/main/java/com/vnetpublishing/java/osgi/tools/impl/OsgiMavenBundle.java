@@ -41,6 +41,9 @@ public class OsgiMavenBundle extends AOsgiDependency implements OsgiArtifact  {
 	private String bundleVersion;
 	
 	@XmlElement
+	private boolean isWar = false;
+	
+	@XmlElement
 	private OsgiMavenWrapConfiguration wrap = null;
 	
 	public String getGroupId() {
@@ -84,6 +87,9 @@ public class OsgiMavenBundle extends AOsgiDependency implements OsgiArtifact  {
 			sb.append("wrap:");
 		}
 		
+		if (isWar) {
+			sb.append("war:");
+		}
 		sb.append("mvn:");
 		sb.append(String.valueOf(groupId));
 		sb.append("/");
@@ -91,6 +97,9 @@ public class OsgiMavenBundle extends AOsgiDependency implements OsgiArtifact  {
 		sb.append("/");
 		sb.append(String.valueOf(version));
 		
+		if (isWar) {
+			sb.append("/war");
+		}
 		//TODO: Handle bnd file
 		
 		if (wrap != null) {
@@ -131,6 +140,15 @@ public class OsgiMavenBundle extends AOsgiDependency implements OsgiArtifact  {
 		}
 		
 	}
+	
+	public boolean isWar() {
+		return isWar;
+	}
+	
+	public void setWar(boolean isWar) {
+		this.isWar = isWar;
+	}
+	
 	public OsgiArtifactRefName getRefName() {
 		
 		OsgiArtifactConfig cfg = new OsgiMavenArtifactConfig(this);

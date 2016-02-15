@@ -39,7 +39,11 @@
 			<artifactId>pax-url-wrap</artifactId>
 			<version>2.4.3</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.ops4j.pax.url</groupId>
+			<artifactId>pax-url-war</artifactId>
+			<version>2.4.3</version>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
