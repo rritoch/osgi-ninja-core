@@ -38,6 +38,9 @@ public class OsgiMavenBundle extends AOsgiDependency implements OsgiArtifact  {
 	private String version;
 	
 	@XmlElement
+	private String bundleVersion;
+	
+	@XmlElement
 	private OsgiMavenWrapConfiguration wrap = null;
 	
 	public String getGroupId() {
@@ -58,6 +61,15 @@ public class OsgiMavenBundle extends AOsgiDependency implements OsgiArtifact  {
 	public void setVersion(String version) {
 		this.version = version;
 	}
+	
+	public String getBundleVersion() {
+		return bundleVersion;
+	}
+	public void setBudleVersion(String bundleVersion) {
+		this.bundleVersion = bundleVersion;
+	}
+	
+	
 	public OsgiMavenWrapConfiguration getWrap() {
 		return wrap;
 	}
@@ -122,11 +134,15 @@ public class OsgiMavenBundle extends AOsgiDependency implements OsgiArtifact  {
 	public OsgiArtifactRefName getRefName() {
 		
 		OsgiArtifactConfig cfg = new OsgiMavenArtifactConfig(this);
+		
+		
+		Version v = new Version(bundleVersion == null ? version : bundleVersion);
+		
 		return new OsgiArtifactRefName(
 				"mvn", 
 				groupId,
 				artifactId,
-				new Version(version),
+				v,
 				cfg
 			);
 	}
