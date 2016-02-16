@@ -68,7 +68,8 @@ public class OsgiUserBundleRespository {
 				String depType = dep.getDependencyType();
 				if (OsgiMavenBundle.DEPENDENCY_TYPE.equals(depType)) {
 					OsgiMavenBundle bundleDep = (OsgiMavenBundle)dep;
-					cache.update(bundleDep, force);
+					
+					cache.update(bundleDep, force || bundleDep.getVersion().endsWith("-SNAPSHOT"));
 					cache.copy(bundleDep,path);
 				} else if (OsgiResourceBundle.DEPENDENCY_TYPE.equals(depType)) {
 					OsgiResourceBundle bundleDep = (OsgiResourceBundle)dep;

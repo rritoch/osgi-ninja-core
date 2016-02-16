@@ -112,8 +112,10 @@ public class OsgiLocalBundleRepositoryCache {
 	}
 	
 	public void update(OsgiArtifact artifact, boolean force) throws IOException, URISyntaxException {
+		
 		OsgiArtifactRefName refName = artifact.getRefName();
 		File outfile = new File(refName.getPath(getPath().resolve(Paths.get("repo","default"))).toFile(),refName.getFilename());
+		
 		if (force || !outfile.exists()) {
 			
 			File dir = outfile.getParentFile();
